@@ -12,6 +12,18 @@ public class ProductService {
     private List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
 
+    public ProductService(){
+        products.add(new DigitalProduct(
+                nextId++,"E-Soup Guideline",99.99,"/thisWhereSoap/soup.pdf",4.2 ));
+
+        products.add(new PhysicalProduct(
+                nextId++,"Soup", 57.99,
+                2,"10cm x 15xm x 2mm"
+        ));
+
+
+    }
+
     public List<Product> getAllProduct() {
         return products;
     }

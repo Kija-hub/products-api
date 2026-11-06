@@ -21,17 +21,29 @@ import java.util.ArrayList;
         }
 
         @PostMapping("/products")
-        public Product addProduct(@RequestBody Product product) {
+        public Product addProduct(@RequestBody DigitalProduct product) {
             return productService.addProduct(product);
         }
+//        THIS IS A TEMPORARY FIX DO NOT BE ALARMED
 
         @DeleteMapping("/products/{id}")
         public void deleteProduct(@PathVariable Long id) {
             productService.deleteProduct(id);
         }
+
         @GetMapping ("/product/search")
         public List<Product> search (@RequestParam String name){
             return productService.findByName(name);
         }
+
+        @GetMapping("/prducts/summaries")
+        public List<String> getSummaries(){
+            return productService.getAllSummaries();
+        }
+
+
+
+
+
     }
 

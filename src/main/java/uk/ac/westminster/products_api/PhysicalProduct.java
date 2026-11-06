@@ -3,7 +3,8 @@ package uk.ac.westminster.products_api;
 // name one other class a shop system might
 //have that would NOT pass this test, and say why
 
-public class PhysicalProduct extends Product{
+public class PhysicalProduct extends Product
+implements Discountable{
 
     private double weightKg;
     private String dimensions;
@@ -23,4 +24,18 @@ public class PhysicalProduct extends Product{
         return dimensions;
     }
 
+    @Override
+    public String getSummary(){
+        return "name" + getName() + "Weight" + weightKg;
+    }
+
+    @Override
+    public void applyDiscount(double rate) {
+
+    }
+
+    @Override
+    public double getDiscountedPrice() {
+        return 0;
+    }
 }
